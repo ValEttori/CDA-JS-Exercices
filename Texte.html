@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="Fr">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <title>Exercices JS</title>
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+  <!--Barre de navigation-->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="Menu.html">JavaScript</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="Texte.html">Texte</a></li>
+        <li><a href="Conditions.html">Conditions</a></li>
+        <li><a href="Boucles.html">Boucles</a></li>
+        <li><a href="Fonctions.html">Fonctions</a></li>
+        <li><a href="Tableaux.html">Tableaux</a></li>
+        <li><a href="Formulaire.html">Formulaire</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="house">
+  <h4>1 - Texte</h4>
+  <p>Saisissez vos nom et prénom, ainsi que votre sexe. Un message d'accueil personnalisé s'affichera.</p>
+  <button id="text">Run</button>
+
+  <button onclick="b1()">Code</button>
+
+<div id="b1" style="display:none;">
+  <pre><code class="js">
+        var lastName = prompt('Entrez votre nom :'); 
+        var firstname = prompt('Entrez votre prénom :'); 
+        var gender = window.confirm('Êtes-vous un homme?'); 
+        if (gender == true) {  
+            gender = 'Monsieur';
+        } else {
+            gender = 'Madame';
+        }
+    
+        alert('Bonjour ' + gender + ' ' + lastName + ' ' + firstname + '.' + '\n' + 'Bienvenue sur notre site!');
+    </code></pre>
+</div>
+</section>
+
+<!--Scriptes Bootstrap, JS-->
+<script src="assets/js/code.js"></script>
+<script src="assets/js/texte.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="Fr">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <title>Exercices JS</title>
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+  <!--Barre de navigation-->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="Menu.html">JavaScript</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="Texte.html">Texte</a></li>
+        <li><a href="Conditions.html">Conditions</a></li>
+        <li><a href="Boucles.html">Boucles</a></li>
+        <li><a href="Fonctions.html">Fonctions</a></li>
+        <li><a href="Tableaux.html">Tableaux</a></li>
+        <li><a href="Formulaire.html">Formulaire</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="house">
+    <h4>1 - Parité</h4>
+    <p>Saisissez un nombre. Il vous sera indiqué si il s'agit d'un nombre pair ou impair.</p>
+    <button id="parite">Run</button>
+
+    <button onclick="b1()">Code</button>
+
+<div id="b1" style="display:none;">
+  <pre><code class="js">
+        var nb = window.prompt("Saisissez un nombre");
+        if (nb % 2 == 0) 
+            alert("Ce nombre est pair");
+        else 
+            alert("Ce nombre est impair");
+
+    </code></pre>
+    <br>
+</div>
+  
+    <h4>2 - Age</h4>
+    <p>Entrez une année de naissance. Le programme vous indiquera votre age.</p>
+    <button id="age">Run</button>
+
+    <button onclick="b2()">Code</button>
+
+    <div id="b2" style="display:none;">
+      <pre><code class="js">
+        var dob = window.prompt('Année de naissance');
+        var today = new Date(); 
+        var currentYear = today.getFullYear(); 
+        var age = currentYear - dob; 
+    
+        if (age < 18) {
+            alert('Vous êtes mineur. Vous avez ' + age + 'ans.');
+        }
+        else {
+            alert('Vous êtes majeur. Vous avez ' + age + 'ans.');
+        }
+        </code></pre>
+        <br>
+    </div>
+  
+    <h4>3 - Calculatrice</h4>
+    <p>Faire la saisie de 2 nombres entiers, puis la saisie d'un opérateur '+', '-', '*' ou '/'.</p>
+    <p>Si l'utilisateur entre un opérateur erroné, le programme affichera un message d'erreur. </p>
+    <button id="calculatrice">Run</button>
+
+    <button onclick="b3()">Code</button>
+
+    <div id="b3" style="display:none;">
+      <pre><code class="js">
+        const nb1 = Number(prompt('Premier nombre'));
+        const nb2 = Number(prompt('Deuxième nombre'));
+        let op = prompt('Opérateur');
+        if (nb2 == 0 && op == '/') {
+            alert('division par 0');
+        }
+        else {
+            switch (op) {
+                case '/':
+                    alert(nb1 / nb2);
+                    break;
+                case '+':
+                    alert(nb1 + nb2);
+                    break;
+                case '*':
+                    alert(nb1 * nb2);
+                    break;
+                case '-':
+                    alert(nb1 - nb2);
+                    break;
+                default:
+                    alert('Pov type');
+            }
+        }
+        </code></pre>
+        <br>
+    </div>
+  
+    <h4>4 - Remise</h4>
+    <p>A partir de la saisie du prix unitaire PU d’un produit et de la quantité commandée QTECOM, afficher le prix à payer PAP, en détaillant le port PORT et la remise REM, sachant que :</p>
+    <p> le port est gratuit si le prix des produits TOT est supérieur à 500 €. Dans le cas contraire, le
+      port est de 2% de TOT</p>
+      <p> la valeur minimale du port à payer est de 6 €</p>
+      <p> la remise est de 5% si TOT est compris entre 100 et 200 € et de 10% au-delà */</p>
+    <button id="remise">Run</button>
+
+    <button onclick="b4()">Code</button>
+
+    <div id="b4" style="display:none;">
+      <pre><code class="js">
+        var PU = parseFloat(prompt('Prix unitaire'));
+        var QTECOM = parseInt(prompt('Quantité commandée'));
+        var TOT = PU * QTECOM;
+        var PORT = 0.02 * TOT;
+        var REM5 = TOT * 0.05;
+        var REM10 = TOT * 0.1;
+        var PAP = 0;
+    
+        if (isNaN(PU && QTECOM)) {
+          alert('Erreur, saisissez des nombres');
+        }
+        else {
+    
+          if (TOT > 500) {
+            PAP = TOT - REM10;
+            alert('Le prix à payer sera de ' + PAP + '€.');
+          }
+    
+          else if (TOT > 200 && TOT <= 500) {
+            if (PORT < 6) {
+              PORT = 6;
+            }
+            else {
+              PORT = 0.02 * TOT;
+            }
+            PAP = TOT - REM10 + PORT;
+            alert('Le prix à payer sera de ' + PAP + '€.');
+          }
+          else if (TOT <= 200 && TOT >= 100) {
+            PAP = TOT - REM5 + 6;
+            alert('Le prix à payer sera de ' + PAP + '€.');
+          }
+          else {
+            PAP = TOT + 6;
+            alert('Le prix à payer sera de ' + PAP.toFixed(2) + '€.');
+          }
+        }
+        </code></pre>
+        <br>
+    </div>
+  
+    <h4>5 - Participation</h4>
+    <p>Un patron décide de calculer le montant de sa participation au prix du repas de ses employés de la
+    façon suivante :</p>
+    <p> si il est célibataire : participation de 20%</p>
+    <p> si il est marié : participation de 25%</p>
+    <p> si il a des enfants : participation de 10% supplémentaires par enfant</p>
+    <p>La participation est plafonnée à 50%</p>
+    <p>Si le salaire mensuel est inférieur à 1200 € la participation est majorée de 10%.</p>
+    <p>Ecrire le programme qui lit les informations au clavier et affiche pour chaque salarié, la participation
+    à laquelle il a droit.</p>
+    <button id="participation">Run</button>
+
+    <button onclick="b5()">Code</button>
+
+    <div id="b5" style="display:none;">
+      <pre><code class="js">
+        var celib = window.confirm('Êtes-vous célibataire?');
+        var salary = parseFloat(window.prompt('Indiquez votre salaire :'));
+        if (isNaN(salary)) {
+            alert('Veuillez saisir un nombre valide svp!');
+        }
+        var children = window.prompt('Combien avez-vous d\'enfant?');
+        if (isNaN(children)) {
+            alert('Veuillez saisir un nombre valide svp!');
+        }
+        var tot = 0;
+        switch (celib) {
+            case true:
+            tot = tot + 25; 
+            tot = (tot + (children * 10));
+    
+            if (salary < 1200) {
+                tot = tot + 10;
+            }
+    
+            if (tot > 50) {
+                tot = 50;
+            }
+            break;
+    
+            case false:
+            tot = tot + 20;
+            tot = (tot + (children * 10));
+    
+            if (salary < 1200) {
+                tot = tot + 10;
+            }
+    
+            if (tot > 50) {
+                tot = 50;
+            }
+            break;
+        }
+    
+        alert('La participation patronnale sera de ' + tot + '%');
+        </code></pre>
+        <br>
+    </div>
+
+    <!--Scriptes Bootstrap, JS-->
+    <script src="assets/js/code.js"></script>
+    <script src="assets/js/conditions.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

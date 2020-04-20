@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="Fr">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <title>Exercices JS</title>
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+  
+  <!--Barre de navigation-->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="Menu.html">JavaScript</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="Texte.html">Texte</a></li>
+        <li><a href="Conditions.html">Conditions</a></li>
+        <li><a href="Boucles.html">Boucles</a></li>
+        <li><a href="Fonctions.html">Fonctions</a></li>
+        <li><a href="Tableaux.html">Tableaux</a></li>
+        <li><a href="Formulaire.html">Formulaire</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="house">
+    <h4 style="color: red">1 - Image (A faire)</h4>
+    <p>Ecrire un programme qui permet d'afficher une image.</p>
+    <button id="image">Run</button>
+
+    <h4>2 - Tables de multiplication</h4>
+    <p>Ecrivez une fonction qui affiche une table de multiplication.</p>
+    <p>Votre fonction doit prendre un paramètre qui permet d’indiquer quelle table afficher.</p>
+    <button id="multi">Run</button>
+
+    <button onclick="b2()">Code</button>
+
+    <div id="b2" style="display:none;">
+      <pre><code class="js">
+        var controle = /^[0-9]+$/;
+
+        function _TableMultiplication()
+        {
+            var res = 0;
+            var i = 0;
+            var tab = [];
+            var X = prompt("Entrez le nombre correspondant à la table de multiplication souhaité");
+            if (X == null) {
+                window.close();
+            }
+            else {
+                X = parseInt(X);
+                if (!controle.test(X))
+                {
+                    alert("Il faut entrer un nombre \n Recommencez !");
+                    window.location.reload(_TableMultiplication());
+                }
+                while (i <= 10)
+                {
+                    res = i * X;
+                    tab[i] = (i + " x " + X + " = " + res + "\n");
+                    i++;
+                }
+                if (tab != 0) {
+                    tab = tab.join("");
+                    alert(tab);
+                }
+                if (confirm("Voulez vous recommencer ?") == true) {
+                    window.location.reload(_TableMultiplication());
+                }
+            }
+        }
+        _TableMultiplication();
+        </code></pre>
+    </div>
+
+    <h4>3 - Nombre de lettres</h4>
+    <p>Ecrivez une fonction qui prend deux paramètres :</p>
+    <p> phrase de type string</p>
+    <p> lettre de type string</p>
+    <p>La fonction compte le nombre de fois ou la lettre apparaît dans phrase.</p>
+    <button id="lettre">Run</button>
+
+    <button onclick="b3()">Code</button>
+
+    <div id="b3" style="display:none;">
+      <pre><code class="js">
+        var phrase = window.prompt('Saisissez une phrase :');
+        var lettre = window.prompt('Saisissez une lettre :');
+        
+        function countLetter(lettre, phrase) {  
+        
+        var count = 0;
+        var posLetter = phrase.indexOf(lettre); 
+        
+        while (posLetter != -1) {  
+          count++;
+          posLetter = phrase.indexOf(lettre, posLetter + 1);
+        }
+        
+        var table = document.getElementById('table').insertAdjacentHTML('beforeend', 'Cette phrase contient ' + count + ' lettre(s) ' + lettre + '');
+            }
+        
+        countLetter();
+        </code></pre>
+    </div>
+
+    <h4 style="color: red">4 - Menu (A faire)</h4>
+    <p>A partir du menu affiché à l’écran.</p>
+    <img src="assets/img/tableau.png" class="img-responsive"><br>
+    <p>Vous exécuterez, par les 3 premières options, les exercices déjà réalisés, appelés sous forme de fonction.</p>
+    <button id="image">Run</button>
+
+    <h4 style="color: red">5 - String Token (A faire)</h4>
+    <p>Concevez la fonction strtok qui prend 3 paramètres str1, str2, n en entrée et renvoie une
+      chaîne de caractères : str1 est composée d’une liste de mots séparés par le caractère str2.</p>
+    <button id="image">Run</button>
+  </section>
+
+<!--Scriptes Bootstrap, JS-->
+<script src="assets/js/code.js"></script>
+<script src="assets/js/fonctions.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

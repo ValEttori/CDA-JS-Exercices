@@ -1,0 +1,45 @@
+body {
+  background-color: rgb(49, 49, 49);
+}
+
+.navbar {
+   border-radius: 0px;
+}
+
+h1, h2, h3, h4 {
+  color: white;
+}
+
+p {
+  font-size: 16px;;
+  color: white;
+}
+
+.navbar-header {
+  padding-left: 30px;
+}
+
+.navbar-nav {
+  padding-left: 10px;
+}
+
+button {
+  margin-top: 5px;
+  margin-bottom: 30px;
+  width: 50px;
+}
+
+h1 {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 80px;
+}
+
+#house {
+  padding: 50px;
+  margin-top: -40px;
+}

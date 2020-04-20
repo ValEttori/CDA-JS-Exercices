@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="Fr">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <title>Exercices JS</title>
+  <link href="assets/css/form.css" rel="stylesheet">
+</head>
+<body>
+
+  <!--Barre de navigation-->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="Menu.html">JavaScript</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="Texte.html">Texte</a></li>
+        <li><a href="Conditions.html">Conditions</a></li>
+        <li><a href="Boucles.html">Boucles</a></li>
+        <li><a href="Fonctions.html">Fonctions</a></li>
+        <li><a href="Tableaux.html">Tableaux</a></li>
+        <li><a href="Formulaire.html">Formulaire</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Exposé de l'exercice -->
+  <section id="house"></section>
+    <div id="lol" class="col-md-2">
+      <h2>Evaluation</h2>
+      <h3>Réaliser une interface dynamique</h3>
+      <p>L'évaluation consiste à réaliser un formulaire en HTML dont la saisie est contrôlé en Javascript.</p><br>
+      <p>Pour chaque champ, un contrôle de saisie doit être mis en place. Des messages à destination de l'utilisateur final doivent clairement indiquer les erreurs de saisie.</p><br>
+      <p>La page doit être réalisé avec un framework CSS.</p><br>
+    </div>
+
+
+    <!-- Debut du formulaire -->
+    <div class="col-md-offset-1 col-md-8">
+      <form method="get" class="col-5">
+         <fieldset>
+          <legend>Vos coordonnées</legend>
+          <div class="form-row">
+            <label for="name">Nom *</label>
+            <input type="name" id="nom" class="form-control" name="Name" placeholder="Nom">
+            <p id="errName" class="Erreur"></p>
+          </div>
+          <div class="form-row">
+            <label for="name">Prénom *</label>
+            <input type="prenom" id="prenom" class="form-control" name="Prenom" placeholder="Prénom">
+            <p id="errPrenom" class="Erreur"></p>
+          </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">Madame</label>
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Monsieur *</label><br>
+              </div>
+              <p id="errSexe" class="Erreur"></p>
+              <div class="form-row">
+                <label for="name">Date de naissance *</label>
+                <input id="date" type="date" class="form-control" name="birth" placeholder="jj/mm/aaaa">
+                <p id="errDate" class="Erreur"></p>
+              </div>
+              <div class="form-row">
+                <label for="code">Code postal</label>
+                <input id="codepost" type="cp" class="form-control" name="cp" placeholder="Code Postal">
+                <p id="errCP" class="Erreur" ></p>
+              </div>
+              <div class="form-row">
+                <label for="adresse">Adresse</label>
+                <input id="adresse" type="adresse" class="form-control" name="adresse" placeholder="Adresse">
+                <p id="errAdr" class="Erreur"></p>
+              </div>
+              <div class="form-row">
+                <label for="city">Ville</label>
+                <input id="ville" type="city" class="form-control" name="ville" placeholder="Ville">
+                <p id="errVille" class="Erreur"></p>
+              </div>
+              <div class="form-row">
+                <label for="courriel">Email *</label>
+                <input id="mail" type="" class="form-control" name="courriel" placeholder="Adresse mail">
+                <p id="errMail" class="Erreur"></p>
+              </div>
+          </p>
+         </fieldset>
+
+         <!-- Début de la section "Votre demande"-->
+         <div>
+          <fieldset class="formu">
+              <legend class="titre2">Votre demande</legend>
+              <p>
+              <label for="sujet">Sujet :</label> 
+              <select name="sujet" id="sujet">
+              <option value="1"></option>
+              <option value="2">Choix 1</option>
+              <option value="3">Choix 2</option>
+              <option value="4">Choix 3</option>
+              <option value="5">Choix 4</option>
+          </select><br>
+          <p id="errSujet" class="Erreur"></p> 
+          <label for="question">Votre question : *</label> <textarea class="form-control" id="question" aria-label="With textarea"></textarea>
+          <p id="errQuest" class="Erreur"></p>
+          </p>
+          </fieldset>
+          <p>
+          <input type="checkbox" class="form-check-input" id="accept"> J'accepte le traitement informatique de ce formulaire<br>
+          <p id="errAccept" class="Erreur"></p>
+          </p>
+          <br>
+          <input id="envoie" class="btn btn-primary" type="submit" value="Envoyer">
+          <input class="btn btn-primary" type="reset" value="Annuler">
+          </div>
+      </form>
+    </div>
+  </section>
+
+<!--Scriptes Bootstrap, JS-->
+<script src="assets/js/formulaire.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
